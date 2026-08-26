@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "name": "Holy Bible",
+      "desc": "Read the Bible directly from your wrist",
+      "href": "/holy-bible",
+      "icon": "/images/holy-bible.svg",
+      "crossPromote": true
+    },
+    {
+      "name": "Maps4Garmin",
+      "desc": "Offline Maps, Weather Radar (Paid), and more on your wrist",
+      "href": "/maps4garmin",
+      "icon": "/images/maps4garmin.svg",
+      "crossPromote": true
+    },
+    {
+      "name": "Race Day",
+      "desc": "Real-time runner tracking for coaches and friends",
+      "href": "/race-day",
+      "icon": "/images/race-day.svg",
+      "crossPromote": true
+    },
+    {
+      "name": "Offline Bible",
+      "desc": "Download portions of the Bible to read on your wrist offline",
+      "href": "/offline-bible",
+      "icon": "/images/offline-bible.svg",
+      "crossPromote": true
+    },
+    {
+      "name": "Audio Bible",
+      "desc": "Listen to the Bible directly from your Garmin Watch",
+      "href": "/audio-bible",
+      "icon": "/images/audio-bible.svg",
+      "crossPromote": true
+    },
+    {
+      "name": "In Town",
+      "desc": "Reconnect with friends on the go, without sharing your exact location",
+      "href": "/in-town",
+      "icon": "/images/in-town.svg",
+      "crossPromote": true
+    }
+  ]
+}

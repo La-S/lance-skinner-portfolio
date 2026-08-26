@@ -1,0 +1,7 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="instagram">
+<rect x="2.5" y="2.5" width="19" height="19" rx="5.25" stroke="var(--stroke-0, black)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="12" cy="12" r="4.25" stroke="var(--stroke-0, black)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="17.25" y1="6.75" x2="17.26" y2="6.75" stroke="var(--stroke-0, black)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

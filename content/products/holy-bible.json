@@ -1,0 +1,11 @@
+{
+  "app": "holy-bible",
+  "media": {
+    "discriminant": "garmin",
+    "value": {
+      "heroImage": null,
+      "featureImage": null,
+      "watchStrip": []
+    }
+  }
+}

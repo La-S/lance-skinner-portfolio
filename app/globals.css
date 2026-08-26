@@ -1,0 +1,224 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-yellowtail: var(--font-yellowtail);
+  --font-familjen: var(--font-familjen);
+}
+
+/* Body typography — SF Pro Display on Apple devices (system font),
+   with Windows/Android fallbacks. Default body size = 16px. */
+/* Smooth-scroll anchor jumps (e.g. the Maps4Garmin header nav). Sections
+   already carry scroll-mt to clear the sticky header. */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Text selection highlight. */
+::selection {
+  background-color: #d0d7fb;
+  color: #1e1e1e;
+}
+
+body {
+  background-color: #f3f3f3;
+  color: #1e1e1e;
+  margin: 0;
+  /* Hide the native cursor once the custom one is active (only added on
+     fine-pointer, motion-OK devices). */
+}
+body.cursor-active,
+body.cursor-active a,
+body.cursor-active button,
+body.cursor-active [role="button"],
+body.cursor-active label,
+body.cursor-active summary {
+  cursor: none;
+}
+
+/* ── Custom cursor (design.google-style) ────────────────────────────── */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  will-change: transform, opacity;
+  opacity: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  background: #fff;
+  /* Invert whatever is behind the cursor — white over `difference` flips
+     the underlying color, the design.google signature. */
+  mix-blend-mode: difference;
+  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+}
+/* Grow over interactive elements / on press. */
+.cursor-dot--hover {
+  width: 52px;
+  height: 52px;
+}
+.cursor-dot--press {
+  width: 40px;
+  height: 40px;
+}
+
+body {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  /* Guard against horizontal scroll/clipping from the intentionally
+     over-wide decorative rows (watch marquee, Other Apps carousel). `clip`
+     (not `hidden`) doesn't create a scroll container, so the sticky header
+     keeps working. */
+  overflow-x: clip;
+}
+
+/* Body type scale — apply as utility classes */
+.body-sm { font-size: 14px; }
+.body    { font-size: 16px; }
+.body-lg { font-size: 18px; }
+
+/* 3-column breakpoint for the apps grid — sits between 2-col (sm, 640px)
+   and the desktop animation (1280px). Padding changes at the same
+   breakpoint so columns and margins shift simultaneously. */
+@media (min-width: 900px) {
+  .apps-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding-inline: 40px;
+  }
+  .apps-grid-padding {
+    padding-inline: 40px;
+  }
+}
+
+/* Padding that keeps content left-aligned with the APPS heading at every
+   breakpoint (20 → 30 → 40 → 58px). Used by the About section. */
+.apps-aligned { padding-inline: 20px; }
+@media (min-width: 640px)  { .apps-aligned { padding-inline: 30px; } }
+@media (min-width: 900px)  { .apps-aligned { padding-inline: 40px; } }
+@media (min-width: 1280px) { .apps-aligned { padding-inline: 58px; } }
+
+/* Desktop scatter animation only takes over at ≥ 1280px. Below that, the
+   responsive grid (1/2/3 columns + scroll-reveal) is shown instead. */
+.apps-desktop {
+  display: none;
+}
+@media (min-width: 1280px) {
+  .apps-responsive {
+    display: none;
+  }
+  .apps-desktop {
+    display: block;
+  }
+}
+
+/* Soft, expansive drop-shadow for app icons — renders outside the icon's
+   bounding box (so it doesn't affect card layout). */
+.app-icon-shadow {
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.08));
+}
+
+/* Subtle desktop hover for the app cards: a slight lift in scale plus a large,
+   barely-visible shadow. Lives on the inner element so it composes with the
+   JS-driven translateY/opacity on the outer wrapper. */
+.app-card-hover {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  will-change: transform;
+}
+@media (hover: hover) and (pointer: fine) {
+  .app-card-hover:hover {
+    transform: scale(1.015);
+    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.08);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-card-hover {
+    transition: box-shadow 0.35s ease;
+  }
+  .app-card-hover:hover {
+    transform: none;
+  }
+}
+
+/* Scroll-reveal for the responsive (1/2/3-col) app cards — they slide up
+   and fade in as they enter the viewport. The desktop (4-col) layout keeps
+   its own sticky scatter animation. */
+.app-reveal {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+}
+.app-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Honor reduced-motion: show cards immediately, no animation. */
+@media (prefers-reduced-motion: reduce) {
+  .app-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Page-transition fade — replayed on every navigation via app/template.tsx.
+   Opacity-only so it can't break sticky/fixed descendants. */
+.page-transition {
+  animation: page-fade-in 0.32s ease-out both;
+}
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
+  }
+}
+
+/* ── Maps4Garmin product page ───────────────────────────────────── */
+
+/* Brand gradient used on all major headings + the downloads stat. The end
+   colour is themeable per product page via the `--brand-accent` custom
+   property (Maps4Garmin keeps the warm brown default; the Bible pages set
+   their own blue / orange accent). */
+.brand-gradient {
+  font-family: var(--font-familjen), sans-serif;
+  background-image: linear-gradient(90deg, #322e2b 0%, var(--brand-accent, #854621) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Horizontal padding that keeps Maps4Garmin content aligned across
+   breakpoints, mirroring the .apps-aligned scale. */
+.m4g-pad { padding-inline: 20px; }
+@media (min-width: 640px)  { .m4g-pad { padding-inline: 40px; } }
+@media (min-width: 1024px) { .m4g-pad { padding-inline: 80px; } }
+
+/* Endless watch marquee — two side-by-side copies of the strip slide left
+   forever, creating a seamless loop. */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 100s linear infinite;
+}
+.marquee > * {
+  flex-shrink: 0;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee { animation: none; }
+}

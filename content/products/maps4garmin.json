@@ -1,0 +1,11 @@
+{
+  "app": "maps4garmin",
+  "media": {
+    "discriminant": "garmin",
+    "value": {
+      "heroImage": null,
+      "featureImage": null,
+      "watchStrip": []
+    }
+  }
+}

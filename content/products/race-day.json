@@ -1,0 +1,9 @@
+{
+  "app": "race-day",
+  "media": {
+    "discriminant": "mobile",
+    "value": {
+      "mobileScreenshots": []
+    }
+  }
+}

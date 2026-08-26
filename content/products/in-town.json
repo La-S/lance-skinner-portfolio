@@ -1,0 +1,9 @@
+{
+  "app": "in-town",
+  "media": {
+    "discriminant": "mobile",
+    "value": {
+      "mobileScreenshots": []
+    }
+  }
+}
