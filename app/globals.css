@@ -51,6 +51,15 @@ body {
 .body    { font-size: 16px; }
 .body-lg { font-size: 18px; }
 
+/* Responsive "Apps" heading — same size and spacing across mobile, tablet, and
+   the 3-column view (shrunk a touch from the Figma, with more breathing room
+   before the first card). The desktop (≥1280px) layout uses its own heading. */
+.apps-heading {
+  font-size: 92px;
+  letter-spacing: -1.84px;
+  margin-bottom: 44px;
+}
+
 /* 3-column breakpoint for the apps grid — sits between 2-col (sm, 640px)
    and the desktop animation (1280px). Padding changes at the same
    breakpoint so columns and margins shift simultaneously. */

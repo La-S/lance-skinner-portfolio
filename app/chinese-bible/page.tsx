@@ -4,28 +4,31 @@ import { getOtherApps } from "../components/appsCatalog";
 import { getProductMedia } from "../components/productMedia";
 
 export const metadata: Metadata = {
-  title: "Audio Bible — Sharp Edge Technology",
+  title: "Chinese Bible — Sharp Edge Technology",
   description:
-    "Listen to the Word offline, straight from your Garmin watch. Holy Bible Audio brings the World English Bible to your wrist.",
+    "The entire Bible in Chinese bundled into a completely offline Garmin watch app — install once and read anywhere.",
 };
 
 const config: Omit<ProductConfig, "otherApps"> = {
-  wordmark: "Audio Bible",
-  eyebrow: "Audio Bible",
-  title: "Listen to the Bible from your Wrist",
+  wordmark: "Chinese Bible",
+  eyebrow: "Chinese Bible",
+  // Only the hero heading is in Chinese ("圣经 -- 和合本" = Bible — Chinese Union
+  // Version); everything else on the page stays in English, mirroring Offline
+  // Bible, of which this is the Chinese edition.
+  title: "圣经 -- 和合本",
   description: (
     <>
-      Holy Bible Audio is an audio app, created to allow you to{" "}
-      <span className="text-black">listen to the Word offline!</span> The setup
-      is a bit confusing, so please read the notes below to see how to setup
-      Holy Bible Audio.
+      This is almost the same app as{" "}
+      <span className="text-black">Holy Bible</span>. However, this app is{" "}
+      <span className="text-black">completely offline</span>{" "}and in Chinese.
+      The entire Bible is bundled into this app, so once you install the app,
+      you&apos;re good to go!
     </>
   ),
-  accent: "#ff9500",
-  downloads: "10,000",
-  rating: "Rated 4.8 stars, with over 1,100 reviews!",
-  watch: "/images/bible/audio-bible-watch.png",
-  garminUrl: "https://apps.garmin.com/en-US/apps/cc7185ec-6fd4-4848-a3bb-af8af546c61c",
+  accent: "#d43d5b",
+  downloads: "100",
+  watch: "/images/bible/chinese-bible-watch.png",
+  garminUrl: "https://apps.garmin.com/apps/15368f52-8b5a-4a49-828a-357a5bf5fa09",
   features: [
     { title: "Read the Bible Offline", desc: "You can read the whole Bible through this app, install it once, and read it anywhere anytime" },
     { title: "World English Bible (WEB)", desc: "This app features only WEB translation" },
@@ -34,10 +37,10 @@ const config: Omit<ProductConfig, "otherApps"> = {
   ],
 };
 
-export default async function AudioBible() {
+export default async function ChineseBible() {
   const [otherApps, media] = await Promise.all([
-    getOtherApps("Audio Bible"),
-    getProductMedia("audio-bible"),
+    getOtherApps("Chinese Bible"),
+    getProductMedia("chinese-bible"),
   ]);
   return (
     <ProductPage

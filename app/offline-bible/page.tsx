@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const config: Omit<ProductConfig, "otherApps"> = {
-  wordmark: "OFFLINE BIBLE",
+  wordmark: "Offline Bible",
   eyebrow: "Offline Bible",
   title: "Read Offline Bible on your Wrist",
   description: (
