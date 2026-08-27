@@ -54,7 +54,7 @@ export default function WatchMarquee({
             <svg
               key={i}
               viewBox={body.viewBox}
-              className="h-[213px] w-auto px-4 sm:h-[266px] sm:px-6 lg:h-[342px] lg:px-9"
+              className="h-[264px] w-auto px-5 sm:h-[266px] sm:px-6 lg:h-[342px] lg:px-9"
             >
               {shot && (
                 <>

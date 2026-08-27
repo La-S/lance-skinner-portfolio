@@ -20,6 +20,7 @@ const ASSETS = {
   holyBible: "/images/holy-bible.svg",
   offlineBible: "/images/offline-bible.svg",
   audioBible: "/images/audio-bible.svg",
+  chineseBible: "/images/chinese-bible.svg",
 };
 
 // `row` (1 or 2) is the card's row in the desktop 4-col grid.
@@ -29,8 +30,9 @@ const APPS: App[] = [
   { icon: ASSETS.holyBible,    name: "Holy Bible",    desc: "Read the Bible directly from your wrist",     row: 1, scatter: 316, href: "/holy-bible" },
   { icon: ASSETS.maps4Garmin,  name: "Maps4Garmin",   desc: "Offline Maps, Weather Radar (Paid), and more on your wrist",                row: 1, scatter: 132, href: "/maps4garmin" },
   { icon: ASSETS.raceDay,      name: "Race Day",      desc: "Real-time runner tracking for coaches and friends",  row: 1, scatter: 375, href: "/race-day" },
+  { icon: ASSETS.audioBible,   name: "Audio Bible",   desc: "Listen to the Bible directly from your Garmin Watch",                       row: 2, scatter: -135, href: "/audio-bible" },
   { icon: ASSETS.offlineBible, name: "Offline Bible", desc: "Download portions of the Bible to read on your wrist offline",              row: 2, scatter: 659, href: "/offline-bible" },
-  { icon: ASSETS.audioBible,   name: "Audio Bible",   desc: "Listen to the Bible directly from your Garmin Watch",                       row: 2, scatter: 459, href: "/audio-bible" },
+  { icon: ASSETS.chineseBible, name: "Chinese Bible", desc: "Read the entire Bible in Chinese, completely offline on your wrist",     row: 2, scatter: 459, href: "/chinese-bible" },
   { icon: ASSETS.inTown,       name: "In Town",       desc: "Reconnect with friends on the go, without sharing your exact location", row: 2, scatter: -334, href: "/in-town" },
 ];
 
@@ -194,10 +196,7 @@ export default function AppsSection() {
       */}
       <div ref={revealRef} className="apps-responsive pt-[40px] pb-12">
 
-        <p
-          className="font-familjen text-[#1e1e1e] leading-[1.02] px-5 sm:px-[30px] apps-grid-padding mb-5"
-          style={{ fontSize: 113.717, letterSpacing: "-2.2743px" }}
-        >
+        <p className="apps-heading font-familjen text-[#1e1e1e] leading-[1.02] px-5 sm:px-[30px] apps-grid-padding">
           Apps
         </p>
 

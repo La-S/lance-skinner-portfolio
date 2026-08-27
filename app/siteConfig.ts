@@ -17,6 +17,7 @@ export const SITE_ROUTES = [
   "/maps4garmin",
   "/race-day",
   "/offline-bible",
+  "/chinese-bible",
   "/audio-bible",
   "/in-town",
   "/privacy",

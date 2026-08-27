@@ -29,6 +29,13 @@
       "crossPromote": true
     },
     {
+      "name": "Chinese Bible",
+      "desc": "Read the entire Bible in Chinese, completely offline on your wrist",
+      "href": "/chinese-bible",
+      "icon": "/images/chinese-bible.svg",
+      "crossPromote": true
+    },
+    {
       "name": "Audio Bible",
       "desc": "Listen to the Bible directly from your Garmin Watch",
       "href": "/audio-bible",
