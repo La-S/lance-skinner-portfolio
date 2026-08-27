@@ -29,44 +29,9 @@ body {
   background-color: #f3f3f3;
   color: #1e1e1e;
   margin: 0;
-  /* Hide the native cursor once the custom one is active (only added on
-     fine-pointer, motion-OK devices). */
-}
-body.cursor-active,
-body.cursor-active a,
-body.cursor-active button,
-body.cursor-active [role="button"],
-body.cursor-active label,
-body.cursor-active summary {
-  cursor: none;
-}
-
-/* ── Custom cursor (design.google-style) ────────────────────────────── */
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  pointer-events: none;
-  will-change: transform, opacity;
-  opacity: 0;
-  width: 28px;
-  height: 28px;
-  border-radius: 9999px;
-  background: #fff;
-  /* Invert whatever is behind the cursor — white over `difference` flips
-     the underlying color, the design.google signature. */
-  mix-blend-mode: difference;
-  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
-}
-/* Grow over interactive elements / on press. */
-.cursor-dot--hover {
-  width: 52px;
-  height: 52px;
-}
-.cursor-dot--press {
-  width: 40px;
-  height: 40px;
+  /* The custom cursor (app/components/CustomCursor.tsx) hides the native cursor
+     itself by injecting a global `cursor: none` rule while it's active — only
+     on fine-pointer, motion-OK devices. */
 }
 
 body {
