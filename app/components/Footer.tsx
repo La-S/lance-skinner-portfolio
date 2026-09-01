@@ -27,7 +27,7 @@ export default function Footer() {
           href="/privacy"
           className="text-[18px] text-[#888] hover:underline sm:text-[24px]"
         >
-          Privacy Policy
+          Terms &amp; Privacy
         </Link>
         {!isHome && (
           <Link
