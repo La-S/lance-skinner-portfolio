@@ -88,14 +88,12 @@ export default async function Maps4Garmin() {
     >
       <Maps4GarminHeader />
 
-      <main className="mx-auto max-w-[1440px]">
+      <main>
         {/* ── Hero ─────────────────────────────────────────────── */}
-        {/* On lg+ the min-height fills the first screen (viewport minus the
-            75px sticky header) and the button uses mt-auto to sit near the
-            bottom. On mobile and tablet that would leave a huge gap, so the
-            min-height is dropped and the button uses a normal margin so the
-            next block follows directly. */}
-        <section className="m4g-pad flex flex-col items-center pt-[20px] pb-[40px] text-center sm:pt-[28px] sm:pb-[44px] lg:min-h-[calc(100svh-75px)]">
+        {/* Fixed gap between the watch and the button so the hero looks the
+            same on every screen height (it used to stretch to fill the
+            viewport, which left a huge gap on tall monitors). */}
+        <section className="m4g-pad mx-auto max-w-[1440px] flex flex-col items-center pt-[20px] pb-[40px] text-center sm:pt-[28px] sm:pb-[44px]">
           <h1 className="brand-gradient mx-auto max-w-[820px] text-balance text-[34px] font-semibold leading-[1.08] tracking-tight sm:text-[44px] lg:text-[56px]">
             Take your Garmin to the next level
           </h1>
@@ -104,11 +102,11 @@ export default async function Maps4Garmin() {
             alt="Garmin watch displaying the Maps4Garmin app"
             className="mt-8 w-[200px] sm:mt-10 sm:w-[240px] lg:w-[264px]"
           />
-          <AccentButton className="mt-10 lg:mt-auto" />
+          <AccentButton className="mt-10 lg:mt-20" />
         </section>
 
         {/* ── Description ──────────────────────────────────────── */}
-        <section className="m4g-pad pt-[48px] pb-[56px] sm:pt-[72px] sm:pb-[72px]">
+        <section className="m4g-pad mx-auto max-w-[1440px] pt-[48px] pb-[56px] sm:pt-[72px] sm:pb-[72px]">
           <p className="mx-auto max-w-[640px] text-center text-[19px] font-semibold leading-[1.5] text-[#888] sm:text-[21px]">
             Maps4Garmin is the perfect companion for all your adventures. It
             gives you access to high-quality{" "}
@@ -127,7 +125,7 @@ export default async function Maps4Garmin() {
             rating block drop to its own (still-centered) row when there isn't
             room, so the single-line rating text never spills into the
             downloads column. */}
-        <section className="m4g-pad flex flex-col items-center gap-12 pb-[72px] lg:flex-row lg:flex-wrap lg:items-center lg:justify-center lg:gap-x-16 lg:gap-y-10">
+        <section className="m4g-pad mx-auto max-w-[1440px] flex flex-col items-center gap-12 pb-[72px] lg:flex-row lg:flex-wrap lg:items-center lg:justify-center lg:gap-x-16 lg:gap-y-10">
           <p className="brand-gradient text-center font-semibold leading-none">
             <span className="align-middle text-[21px] text-[#888]">Over </span>
             <span className="align-middle text-[56px] sm:text-[72px] lg:text-[80px]">
@@ -145,7 +143,7 @@ export default async function Maps4Garmin() {
         </section>
 
         {/* ── Features (bento) ─────────────────────────────────── */}
-        <section id="features" className="m4g-pad scroll-mt-[90px] pt-[40px] pb-[80px]">
+        <section id="features" className="m4g-pad mx-auto max-w-[1440px] scroll-mt-[90px] pt-[40px] pb-[80px]">
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto]">
             {/* Feature 1 — Weather Radar (tall, spans both rows on desktop) */}
             <article className="flex flex-col overflow-hidden rounded-[20px] bg-white p-7 md:row-span-2 lg:row-span-2">
@@ -226,7 +224,7 @@ export default async function Maps4Garmin() {
         <WatchMarquee screenshots={media.watchStrip} accent={WATCH_ACCENT} />
 
         {/* ── About Developer ──────────────────────────────────── */}
-        <section id="developer" className="m4g-pad scroll-mt-[90px] py-[72px]">
+        <section id="developer" className="m4g-pad mx-auto max-w-[1440px] scroll-mt-[90px] py-[72px]">
           <h2 className="brand-gradient mb-12 text-[40px] font-semibold leading-tight sm:text-[48px] lg:text-[56px]">
             About Developer
           </h2>
@@ -266,7 +264,7 @@ export default async function Maps4Garmin() {
 
         {/* ── Other Apps ───────────────────────────────────────── */}
         <section id="other-apps" className="scroll-mt-[90px] py-[40px]">
-          <h2 className="brand-gradient m4g-pad mb-8 text-[40px] font-semibold leading-tight sm:text-[48px] lg:text-[56px]">
+          <h2 className="brand-gradient m4g-pad mx-auto mb-8 max-w-[1440px] text-[40px] font-semibold leading-tight sm:text-[48px] lg:text-[56px]">
             Other Apps by SirLancelot
           </h2>
           <OtherAppsCarousel apps={OTHER_APPS} />

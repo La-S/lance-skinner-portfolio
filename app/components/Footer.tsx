@@ -18,21 +18,21 @@ export default function Footer() {
 
   return (
     <footer className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-4 py-8 m4g-pad sm:flex-row">
-      <p className="text-[20px] font-light text-black sm:text-[28px] lg:text-[32px]">
+      <p className="text-[20px] font-light text-black sm:text-[24px]">
         © 2025 Sharp Edge Technology
       </p>
       <div className="flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
         {/* Privacy Policy sits to the left of All Apps in the link cluster. */}
         <Link
           href="/privacy"
-          className="text-[18px] text-[#888] hover:underline sm:text-[24px]"
+          className="text-[18px] text-[#888] hover:underline sm:text-[20px]"
         >
           Terms &amp; Privacy
         </Link>
         {!isHome && (
           <Link
             href="/"
-            className="text-[18px] text-black hover:underline sm:text-[24px]"
+            className="text-[18px] text-black hover:underline sm:text-[20px]"
           >
             All Apps
           </Link>
@@ -41,7 +41,7 @@ export default function Footer() {
           href="https://github.com/La-S"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-[7px] text-[18px] text-black hover:underline sm:text-[24px]"
+          className="flex items-center gap-[7px] text-[18px] text-black hover:underline sm:text-[20px]"
         >
           <img src={ASSETS.github} alt="" className="size-6" />
           Github
@@ -50,7 +50,7 @@ export default function Footer() {
           href="https://www.instagram.com/sirlancelot_developer/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-[7px] text-[18px] text-black hover:underline sm:text-[24px]"
+          className="flex items-center gap-[7px] text-[18px] text-black hover:underline sm:text-[20px]"
         >
           <img src={ASSETS.instagram} alt="" className="size-6" />
           Instagram

@@ -44,7 +44,7 @@
     },
     {
       "name": "In Town",
-      "desc": "Reconnect with friends on the go, without sharing your exact location",
+      "desc": "Reconnect with friends on the go, without sharing exact location",
       "href": "/in-town",
       "icon": "/images/in-town.svg",
       "crossPromote": true

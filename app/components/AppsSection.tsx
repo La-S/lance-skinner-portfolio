@@ -33,7 +33,7 @@ const APPS: App[] = [
   { icon: ASSETS.audioBible,   name: "Audio Bible",   desc: "Listen to the Bible directly from your Garmin Watch",                       row: 2, scatter: -135, href: "/audio-bible" },
   { icon: ASSETS.offlineBible, name: "Offline Bible", desc: "Download portions of the Bible to read on your wrist offline",              row: 2, scatter: 659, href: "/offline-bible" },
   { icon: ASSETS.chineseBible, name: "Chinese Bible", desc: "Read the entire Bible in Chinese, completely offline on your wrist",     row: 2, scatter: 459, href: "/chinese-bible" },
-  { icon: ASSETS.inTown,       name: "In Town",       desc: "Reconnect with friends on the go, without sharing your exact location", row: 2, scatter: -334, href: "/in-town" },
+  { icon: ASSETS.inTown,       name: "In Town",       desc: "Reconnect with friends on the go, without sharing exact location", row: 2, scatter: -334, href: "/in-town" },
 ];
 
 const SCROLL_RANGE = 1200;
@@ -45,6 +45,13 @@ const MIN_SECTION_HEIGHT = 888;
 // With pt-[80px] + ~330px row 1 + 20px gap, row 2's natural top is ~430.
 const ROW1_Y = 80;
 const ROW2_Y = 430;
+// Space kept below the finished grid before the next section — matches the
+// mobile/tablet layout's pb-12.
+const GRID_TAIL_GAP = 48;
+// Share of the sticky pane's unused space that the next section is pulled up
+// into. 1 = gap fully closed, but About slides a long way under the pinned
+// cards on tall screens; 0.5 halves that slide.
+const PULL_UP_RATIO = 0.5;
 
 function easeInOut(t: number) {
   return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
@@ -52,6 +59,7 @@ function easeInOut(t: number) {
 
 export default function AppsSection() {
   const outerRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const revealRef = useRef<HTMLDivElement>(null);
 
@@ -137,12 +145,34 @@ export default function AppsSection() {
       });
     };
 
+    // The sticky pane is a full screen tall, but the finished grid only uses
+    // ~724px of it — on tall monitors that left a big empty band above the
+    // next section. Pull the following content up into part of that unused
+    // space (PULL_UP_RATIO). The band is empty once the cards have settled,
+    // so nothing overlaps.
+    const fitToGrid = () => {
+      const outer = outerRef.current;
+      const grid = gridRef.current;
+      if (!outer || !grid) return;
+      if (window.innerWidth < 1280) {
+        outer.style.marginBottom = "";
+        return;
+      }
+      const pane = grid.parentElement as HTMLElement;
+      const used = grid.offsetTop + grid.offsetHeight + GRID_TAIL_GAP;
+      outer.style.marginBottom = `-${Math.round(Math.max(0, pane.offsetHeight - used) * PULL_UP_RATIO)}px`;
+    };
+    const handleResize = () => {
+      fitToGrid();
+      handleScroll();
+    };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll);
-    handleScroll();
+    window.addEventListener("resize", handleResize);
+    handleResize();
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -255,7 +285,7 @@ export default function AppsSection() {
           className="sticky top-0 overflow-hidden px-[58px]"
           style={{ height: `max(100vh, ${MIN_SECTION_HEIGHT}px)`, paddingTop: ROW1_Y }}
         >
-          <div className="grid grid-cols-4 gap-5">
+          <div ref={gridRef} className="grid grid-cols-4 gap-5">
             {/* APPS heading — first grid cell (col-1 / row-1). */}
             <p
               className="font-familjen text-[#1e1e1e] whitespace-nowrap leading-[1.02] self-start"
