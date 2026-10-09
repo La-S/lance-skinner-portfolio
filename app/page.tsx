@@ -21,8 +21,10 @@ export default function Home() {
       </div>
 
       {/* About section — photo + bio + socials (ported from Maps4Garmin),
-          with the heading matched to the "Apps" display treatment. */}
-      <section className="apps-aligned mx-auto max-w-[1440px] pb-[clamp(72px,9vw,128px)] pt-[clamp(32px,5vw,56px)]">
+          with the heading matched to the "Apps" display treatment. `relative`
+          keeps it painted above the Apps sticky pane, which it overlaps on
+          desktop (see PULL_UP_RATIO in AppsSection). */}
+      <section className="apps-aligned relative mx-auto max-w-[1440px] pb-[clamp(72px,9vw,128px)] pt-[clamp(32px,5vw,56px)]">
         <h2
           className="font-familjen text-[#888] text-center leading-[1.02] mb-12"
           style={{ fontSize: 113.717, letterSpacing: "-2.2743px" }}

@@ -94,9 +94,9 @@ export default async function InTown() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-[1440px]">
+      <main>
         {/* ── Hero ─────────────────────────────────────────────── */}
-        <section className="m4g-pad flex flex-col items-center pt-[20px] pb-[48px] text-center sm:pt-[40px] sm:pb-[64px]">
+        <section className="m4g-pad mx-auto max-w-[1440px] flex flex-col items-center pt-[20px] pb-[48px] text-center sm:pt-[40px] sm:pb-[64px]">
           <h1 className="brand-gradient mx-auto max-w-[820px] text-balance pb-[0.12em] text-[34px] font-semibold leading-[1.08] tracking-tight sm:text-[44px] lg:text-[56px]">
             Privacy Centered Friend Alerts
           </h1>
@@ -120,7 +120,7 @@ export default async function InTown() {
         </section>
 
         {/* ── Description ──────────────────────────────────────── */}
-        <section className="m4g-pad pt-[24px] pb-[56px]">
+        <section className="m4g-pad mx-auto max-w-[1440px] pt-[24px] pb-[56px]">
           <p className="mx-auto max-w-[640px] text-center text-[19px] font-semibold leading-[1.5] text-[#888] sm:text-[21px]">
             In Town sends you a notification when you and a friend are within{" "}
             <span className="text-black">70 miles</span> of each other, giving you
@@ -134,7 +134,7 @@ export default async function InTown() {
         </section>
 
         {/* ── Features ─────────────────────────────────────────── */}
-        <section id="features" className="m4g-pad scroll-mt-[90px] pt-[24px] pb-[72px]">
+        <section id="features" className="m4g-pad mx-auto max-w-[1440px] scroll-mt-[90px] pt-[24px] pb-[72px]">
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
             {[
               { t: "Privacy First", d: "Only coarse location is ever shared — friends see that you're nearby, never your exact coordinates." },
@@ -151,7 +151,7 @@ export default async function InTown() {
         </section>
 
         {/* ── Install ──────────────────────────────────────────── */}
-        <section id="install" className="m4g-pad scroll-mt-[90px] pt-[16px] pb-[80px]">
+        <section id="install" className="m4g-pad mx-auto max-w-[1440px] scroll-mt-[90px] pt-[16px] pb-[80px]">
           <div className="mx-auto max-w-[720px] text-center">
             <h2 className="brand-gradient text-[34px] font-semibold leading-tight sm:text-[44px]">
               How to get started
@@ -179,7 +179,7 @@ export default async function InTown() {
         <WatchMarquee screenshots={media.watchStrip} />
 
         {/* ── About Developer ──────────────────────────────────── */}
-        <section id="developer" className="m4g-pad scroll-mt-[90px] py-[72px]">
+        <section id="developer" className="m4g-pad mx-auto max-w-[1440px] scroll-mt-[90px] py-[72px]">
           <h2 className="brand-gradient mb-12 text-[40px] font-semibold leading-tight sm:text-[48px] lg:text-[56px]">
             About Developer
           </h2>
@@ -213,7 +213,7 @@ export default async function InTown() {
 
         {/* ── Other Apps ───────────────────────────────────────── */}
         <section id="other-apps" className="scroll-mt-[90px] py-[40px]">
-          <h2 className="brand-gradient m4g-pad mb-8 text-[40px] font-semibold leading-tight sm:text-[48px] lg:text-[56px]">
+          <h2 className="brand-gradient m4g-pad mx-auto mb-8 max-w-[1440px] text-[40px] font-semibold leading-tight sm:text-[48px] lg:text-[56px]">
             Other Apps by SirLancelot
           </h2>
           <OtherAppsCarousel apps={OTHER_APPS} />
