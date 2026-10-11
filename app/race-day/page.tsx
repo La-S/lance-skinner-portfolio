@@ -107,9 +107,9 @@ export default async function RaceDay() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-[1440px]">
+      <main>
         {/* ── Hero ─────────────────────────────────────────────── */}
-        <section className="m4g-pad flex flex-col items-center pt-[20px] pb-[48px] text-center sm:pt-[40px] sm:pb-[64px]">
+        <section className="m4g-pad mx-auto max-w-[1440px] flex flex-col items-center pt-[20px] pb-[48px] text-center sm:pt-[40px] sm:pb-[64px]">
           <h1 className="brand-gradient mx-auto max-w-[820px] text-balance text-[34px] font-semibold leading-[1.08] tracking-tight sm:text-[44px] lg:text-[56px]">
             Track every runner, live
           </h1>
@@ -124,7 +124,7 @@ export default async function RaceDay() {
         </section>
 
         {/* ── Features ─────────────────────────────────────────── */}
-        <section id="features" className="m4g-pad scroll-mt-[90px] pt-[24px] pb-[72px]">
+        <section id="features" className="m4g-pad mx-auto max-w-[1440px] scroll-mt-[90px] pt-[24px] pb-[72px]">
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
             {[
               { t: "Live Pace & Splits", d: "Get split times the moment they happen — no waiting at the finish line." },
@@ -141,7 +141,7 @@ export default async function RaceDay() {
         </section>
 
         {/* ── Install ──────────────────────────────────────────── */}
-        <section id="install" className="m4g-pad scroll-mt-[90px] pt-[16px] pb-[80px]">
+        <section id="install" className="m4g-pad mx-auto max-w-[1440px] scroll-mt-[90px] pt-[16px] pb-[80px]">
           <div className="mx-auto max-w-[720px] text-center">
             <h2 className="brand-gradient text-[34px] font-semibold leading-tight sm:text-[44px]">
               How to set it up
@@ -196,7 +196,7 @@ export default async function RaceDay() {
         <WatchMarquee screenshots={media.watchStrip} />
 
         {/* ── About Developer ──────────────────────────────────── */}
-        <section id="developer" className="m4g-pad scroll-mt-[90px] py-[72px]">
+        <section id="developer" className="m4g-pad mx-auto max-w-[1440px] scroll-mt-[90px] py-[72px]">
           <h2 className="brand-gradient mb-12 text-[40px] font-semibold leading-tight sm:text-[48px] lg:text-[56px]">
             About Developer
           </h2>
@@ -230,7 +230,7 @@ export default async function RaceDay() {
 
         {/* ── Other Apps ───────────────────────────────────────── */}
         <section id="other-apps" className="scroll-mt-[90px] py-[40px]">
-          <h2 className="brand-gradient m4g-pad mb-8 text-[40px] font-semibold leading-tight sm:text-[48px] lg:text-[56px]">
+          <h2 className="brand-gradient m4g-pad mx-auto mb-8 max-w-[1440px] text-[40px] font-semibold leading-tight sm:text-[48px] lg:text-[56px]">
             Other Apps by SirLancelot
           </h2>
           <OtherAppsCarousel apps={OTHER_APPS} />

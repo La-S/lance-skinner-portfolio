@@ -99,9 +99,9 @@ export default function ProductPage({ config }: { config: ProductConfig }) {
     <div className="min-h-screen bg-[#f3f3f3] text-[#1e1e1e]" style={themeStyle}>
       <ProductHeader wordmark={wordmark} />
 
-      <main className="mx-auto max-w-[1440px]">
+      <main>
         {/* ── Hero ─────────────────────────────────────────────── */}
-        <section className="m4g-pad flex flex-col items-center pt-[20px] pb-[40px] text-center sm:pt-[28px] sm:pb-[44px] lg:min-h-[calc(100svh-75px)]">
+        <section className="m4g-pad mx-auto max-w-[1440px] flex flex-col items-center pt-[20px] pb-[40px] text-center sm:pt-[28px] sm:pb-[44px]">
           <h1 className="brand-gradient mx-auto max-w-[900px] text-balance text-[34px] font-semibold leading-[1.08] tracking-tight sm:text-[44px] lg:text-[56px]">
             {title}
           </h1>
@@ -114,7 +114,7 @@ export default function ProductPage({ config }: { config: ProductConfig }) {
             href={garminUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${solidButton} mt-10 lg:mt-auto`}
+            className={`${solidButton} mt-10 lg:mt-20`}
             style={{ backgroundColor: accent }}
           >
             Get for Free
@@ -122,14 +122,14 @@ export default function ProductPage({ config }: { config: ProductConfig }) {
         </section>
 
         {/* ── Description ──────────────────────────────────────── */}
-        <section className="m4g-pad pt-[48px] pb-[56px] sm:pt-[72px] sm:pb-[72px]">
+        <section className="m4g-pad mx-auto max-w-[1440px] pt-[48px] pb-[56px] sm:pt-[72px] sm:pb-[72px]">
           <p className="mx-auto max-w-[640px] text-center text-[19px] font-semibold leading-[1.5] text-[#888] sm:text-[21px]">
             {description}
           </p>
         </section>
 
         {/* ── Stats ────────────────────────────────────────────── */}
-        <section className="m4g-pad flex flex-col items-center gap-12 pb-[72px] lg:flex-row lg:flex-wrap lg:items-center lg:justify-center lg:gap-x-16 lg:gap-y-10">
+        <section className="m4g-pad mx-auto max-w-[1440px] flex flex-col items-center gap-12 pb-[72px] lg:flex-row lg:flex-wrap lg:items-center lg:justify-center lg:gap-x-16 lg:gap-y-10">
           <p className="brand-gradient text-center font-semibold leading-none">
             <span className="align-middle text-[21px] text-[#888]">Over </span>
             <span className="align-middle text-[56px] sm:text-[72px] lg:text-[80px]">
@@ -149,7 +149,7 @@ export default function ProductPage({ config }: { config: ProductConfig }) {
         </section>
 
         {/* ── Features (bento) ─────────────────────────────────── */}
-        <section id="features" className="m4g-pad scroll-mt-[90px] pt-[40px] pb-[80px]">
+        <section id="features" className="m4g-pad mx-auto max-w-[1440px] scroll-mt-[90px] pt-[40px] pb-[80px]">
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto]">
             {features.map((feature, i) => {
               const isTall = i === 0;
@@ -208,7 +208,7 @@ export default function ProductPage({ config }: { config: ProductConfig }) {
         <WatchMarquee screenshots={watchScreens} />
 
         {/* ── About Developer ──────────────────────────────────── */}
-        <section id="developer" className="m4g-pad scroll-mt-[90px] py-[72px]">
+        <section id="developer" className="m4g-pad mx-auto max-w-[1440px] scroll-mt-[90px] py-[72px]">
           <h2 className="brand-gradient mb-12 text-center text-[40px] font-semibold leading-tight sm:text-left sm:text-[48px] lg:text-[56px]">
             About Developer
           </h2>
@@ -248,7 +248,7 @@ export default function ProductPage({ config }: { config: ProductConfig }) {
 
         {/* ── Other Apps ───────────────────────────────────────── */}
         <section id="other-apps" className="scroll-mt-[90px] py-[40px]">
-          <h2 className="brand-gradient m4g-pad mb-8 text-center text-[40px] font-semibold leading-tight sm:text-left sm:text-[48px] lg:text-[56px]">
+          <h2 className="brand-gradient m4g-pad mx-auto mb-8 max-w-[1440px] text-center text-[40px] font-semibold leading-tight sm:text-left sm:text-[48px] lg:text-[56px]">
             Other Apps by SirLancelot
           </h2>
           <OtherAppsCarousel apps={otherApps} />
