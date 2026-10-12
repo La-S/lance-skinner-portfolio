@@ -179,6 +179,22 @@ body {
 @media (min-width: 640px)  { .m4g-pad { padding-inline: 40px; } }
 @media (min-width: 1024px) { .m4g-pad { padding-inline: 80px; } }
 
+/* Full-bleed scroller padding: same scale as .m4g-pad, plus whatever margin
+   the 1440px-capped sections have on wider screens — so the first card
+   lines up with the heading above while the row still scrolls edge to edge.
+   scroll-padding matches so snapping keeps cards on that same line. The
+   right side keeps just the gutter, so the row doesn't scroll when every
+   card already fits. */
+.m4g-bleed-pad {
+  --m4g-gutter: 20px;
+  --m4g-bleed: max(var(--m4g-gutter), calc((100% - 1440px) / 2 + var(--m4g-gutter)));
+  padding-left: var(--m4g-bleed);
+  padding-right: var(--m4g-gutter);
+  scroll-padding-left: var(--m4g-bleed);
+}
+@media (min-width: 640px)  { .m4g-bleed-pad { --m4g-gutter: 40px; } }
+@media (min-width: 1024px) { .m4g-bleed-pad { --m4g-gutter: 80px; } }
+
 /* Endless watch marquee — two side-by-side copies of the strip slide left
    forever, creating a seamless loop. */
 .marquee {

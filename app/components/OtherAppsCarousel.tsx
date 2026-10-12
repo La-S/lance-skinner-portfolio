@@ -55,7 +55,7 @@ export default function OtherAppsCarousel({ apps }: { apps: App[] }) {
         // overflow-x-auto forces the vertical axis to clip too, which would cut
         // off a card's hover lift — so we add top headroom (pt-4) and pull the
         // scroller back up (-mt-4) so cards and arrows keep their position.
-        className="-mt-4 flex snap-x scroll-pl-5 gap-5 overflow-x-auto pt-4 pb-4 m4g-pad [scrollbar-width:thin] sm:scroll-pl-10 lg:scroll-pl-20"
+        className="-mt-4 flex snap-x gap-5 overflow-x-auto pt-4 pb-4 m4g-bleed-pad [scrollbar-width:thin]"
       >
         {apps.map((app) => (
           <div
